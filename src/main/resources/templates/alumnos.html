@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html  lang="es" xmlns:th="http://www.thymeleaf.org" >
+<head>
+  <!-- Site made with Mobirise Website Builder v5.6.11, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v5.6.11, mobirise.com">
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image:src" content="">
+  <meta property="og:image" content="">
+  <meta name="twitter:title" content="Inicio Alumnos">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logoquinto.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>Inicio Alumnos</title>
+  <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="/assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="/assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="/assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,200,300,400,500,600,700,100i,200i,300i,400i,500i,600i,700i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,200,300,400,500,600,700,100i,200i,300i,400i,500i,600i,700i&display=swap"></noscript>
+  <link rel="preload" as="style" href="/assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="/assets/mobirise/css/mbr-additional.css" type="text/css">
+  
+  
+</head>
+<body>
+  
+  <section data-bs-version="5.1" class="menu menu1 cid-ttr10Xc9R2" once="menu" id="menu1-g">
+    
+
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="/">
+                        <img src="/assets/images/logoquinto.png" alt="Quinto University" style="height: 3.9rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="/">Quinto University</a></span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="/#tabs1-a">Perfil</a></li><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="login.html">Cerrar Sesión</a></li></ul>
+                
+                
+            </div>
+        </div>
+    </nav>
+</section>
+
+<section data-bs-version="5.1" class="tabs content18 cid-ttr10YVRET" id="tabs1-h">
+
+    
+
+    
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10">
+                <h3 class="mbr-section-title mb-0 mbr-fonts-style display-2">
+                    <strong>Cursos</strong></h3>
+                <h4 class="mbr-section-subtitle mb-0 mt-2 mbr-fonts-style display-5"><label th:text="${alumno.nombre}" ></label> estos son los cursos que puedes realizar</h4>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-12 col-md-10">
+                <ul class="nav nav-tabs mb-4" role="tablist">
+                    <li th:each="cl:${cursosL}" class="nav-item first mbr-fonts-style">
+                    <a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" data-bs-toggle="tab" href="#tabs1-h_tab0" aria-selected="true">
+                    <strong th:text="${cl.nombre}"></strong>
+                    </a>
+                    </li>
+                  </ul>
+                <div class="tab-content" >
+                    <div id="tab1" class="tab-pane in active" role="tabpanel"  th:each="clm:${cursosL}">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="mbr-text mbr-fonts-style display-7">Turno: <label class="mbr-text mbr-fonts-style display-7" th:text="${clm.turno}"></label></p><p class="mbr-text mbr-fonts-style display-7">Horario: <label class="mbr-text mbr-fonts-style display-7" th:text="${clm.horarios}"></label></p>
+                                <p class="mbr-text mbr-fonts-style display-7">Profes: </p><br><br>
+                                <p class="mbr-text mbr-fonts-style display-7">Realizar Curso.</p>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="content9 cid-ttr2QtBUYX" id="content9-i">
+    
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="counter-container col-md-12 col-lg-10">
+                <h4 class="mbr-section-title mbr-fonts-style mb-4 display-5">
+                    Mis Cursos</h4>
+                <div class="mbr-text mbr-fonts-style display-7">
+                    <ol>
+                        <li th:each="cA:${alumno.Curso}" th:text="${cA.nombre}" ><strong>No Coding </strong>You don't have to code to create your own site. Select one of available themes in the Mobirise sitebuilder. <a href="https://mobiri.se/" class="text-danger">Try it now!</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/2936414" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">Made with &#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/landing-page-software.html">Landing Page Software</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/mbr-tabs/mbr-tabs.js"></script>  <script src="assets/theme/js/script.js"></script>  
+  
+  
+ <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
+  </body>
+</html>
